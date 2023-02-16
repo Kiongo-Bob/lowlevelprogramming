@@ -1,11 +1,14 @@
 #include <stdio.h>
 
 /**
- * main - print the "Programming is like building a multilingual puzzle"
- * Return: 0
+ * main - This is the mainnfunction
+ * Description: File to print simple stuff
+ *
+ * Retun: 0
+ *
  */
 int main(void)
 {
-	puts("\"Programming is like building a multilingual puzzle")
+	puts("\"Programming is like building a multilingual puzzle");
 	return 0;
 }
