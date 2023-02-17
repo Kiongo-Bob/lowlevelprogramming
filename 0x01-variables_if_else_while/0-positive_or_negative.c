@@ -4,7 +4,7 @@
 /**
  * main - this is the main function.
  * Description - Get a random number
- * and determine if it is zero, positive or negative
+ * then determine if it is zero, positive or negative
  *
  * Return: Always (0) Success
  */
