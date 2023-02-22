@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * main - The main function
- * description - Prints putchar
- * Returns: always (0) success
- */
- 
- int main(void)
- {
+* main - This is the main function
+* description - Prints _putchar
+* Return: always (0) success
+*/
+
+int main(void)
+{
 	_putchar('_');
 	_putchar('p');
 	_putchar('u');
@@ -19,4 +19,4 @@
 	_putchar('\n');
 
 	return (0);
- }
+}
