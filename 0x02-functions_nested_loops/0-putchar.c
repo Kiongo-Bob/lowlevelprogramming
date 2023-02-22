@@ -3,7 +3,7 @@
  * main - The main function
  * description - Prints putchar
  * Returns: (0) success
- * /
+ */
  
  int main(void)
  {
