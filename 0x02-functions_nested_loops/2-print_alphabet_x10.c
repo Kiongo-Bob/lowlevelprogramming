@@ -7,7 +7,7 @@
  *
  */
 
-vois rint_alphabet_x10(void)
+void print_alphabet_x10(void)
 {
 	int num;
 	int ch;
@@ -19,6 +19,6 @@ vois rint_alphabet_x10(void)
 			_putchar(ch);
 		}
 
-		_putchar('\n')
+		_putchar('\n');
 	}
 }
