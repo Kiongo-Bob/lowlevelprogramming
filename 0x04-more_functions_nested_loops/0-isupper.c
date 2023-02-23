@@ -1,4 +1,5 @@
 #include<main.h>
+#include<stdio.h>
 
 /**
  *_isupper - This is the function used
