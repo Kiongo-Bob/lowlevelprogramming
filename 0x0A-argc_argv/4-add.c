@@ -4,8 +4,8 @@
 #include <ctype.h>
 
 /**
- * isNum - check if string arr is num
- * @num:  string to check
+ * isNum - check if string array is num
+ * @num: string to check
  * Return: 0 if it's a number
  *         1 if it's not a number
 */
@@ -24,9 +24,11 @@ int isNum(char num[])
 
 
 /**
- * main - add +ve no.s
+ * main - adds positive numbers
+ *
  * @argc: holds the number of arguments passed
  * @argv: array pointer that holds the arguments passed
+ *
  * Return: Always 0 (Success)
 */
 
@@ -50,4 +52,10 @@ int main(int argc, char *argv[])
 			else
 			{
 				printf("Error\n");
-
+				return (1);
+			}
+		}
+		printf("%d\n", sum);
+	}
+	return (0);
+}
