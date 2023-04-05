@@ -1,39 +1,26 @@
 #include "lists.h"
 
 /**
- * add_nodeint_end - a fxn that adds a new node
- *            at the end of the node
+ * add_nodeint - adds a new node at the beginning of a listint_t list
+ * @head: double pointer to the head of the list
+ * @n: integer to be added to the new node
  *
- * @head: ptr to the first node of the list
- * @n: element int to add to new node
- *
- * Return: address of the new element or NULL if it fails
-*/
-listint_t *add_nodeint_end(listint_t **head, const int n)
+ * Return: address of the new node, or NULL if it failed
+ */
+listint_t *add_nodeint(listint_t **head, const int n)
 {
-	listint_t *new_node, *temp;
+    listint_t *new_node;
 
-	newNode = malloc(sizeof(listint_t));
-	if (newNode == NULL)
-		return (NULL);
+    if (head == NULL)
+        return (NULL);
 
-	newNode->n = n;
-	newNode->next = NULL;
+    new_node = malloc(sizeof(listint_t));
+    if (new_node == NULL)
+        return (NULL);
 
-	temp = *head;
+    new_node->n = n;
+    new_node->next = *head;
+    *head = new_node;
 
-	/*Place newNode first only if head is NULL*/
-	if (temp == NULL)
-		*head = newNode;
-	else
-	{
-		/*if head is not null, and next is not NULL*/
-		while (temp->next != NULL)
-			temp = temp->next;	/*go to the last node*/
-
-		/*place our new node at the end*/
-		temp->next = newNode;
-	}
-
-	return (*head);
+    return (new_node);
 }
