@@ -5,21 +5,18 @@
  * a linked list.
  * @head: head of a list.
  *
- * Return: sum of all data (n).
+ * Return: sum of all the data (n).
  */
 int sum_listint(listint_t *head)
 {
-    if (head == NULL)
-        return 0;
+	int sum;
 
-    int sum = head->n;
-    listint_t *current = head->next;
+	sum = 0;
+	while (head != NULL)
+	{
+		sum += head->n;
+		head = head->next;
+	}
 
-    while (current != NULL)
-    {
-        sum += current->n;
-        current = current->next;
-    }
-
-    return sum;
+	return (sum);
 }
