@@ -8,7 +8,7 @@
  * Return: value of the bit.
  */
 
-int get_bit(unsigned long int num, unsigned int ind:)
+int get_bit(unsigned long int num, unsigned int ind)
 {
 	unsigned int s;
 
