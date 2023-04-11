@@ -7,23 +7,21 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-    if (b == NULL)
+    if (!b)
         return 0;
 
     unsigned int result = 0;
-    int bit = 1;
+    int len = strlen(b);
 
-    for (int i = strlen(b) - 1; i >= 0; i--)
+    for (int i = 0; i < len; i++)
     {
         if (b[i] == '1')
-            result += bit;
-
-        if (b[i] != '0' && b[i] != '1')
+            result = (result << 1) | 1;
+        else if (b[i] == '0')
+            result <<= 1;
+        else
             return 0;
-
-        bit *= 2;
     }
 
     return result;
 }
-
