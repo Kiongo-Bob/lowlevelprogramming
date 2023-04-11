@@ -1,23 +1,22 @@
 #include "main.h"
 
 /**
- * display_binary - Displays the binary representation
- * of a given number.
- * @num: unsigned long int input.
+ * print_binary - print the binary rep of a number
+ * @n: unsigned long int.
  *
- * Return: None.
+ * Return: no return.
  */
-void display_binary(unsigned long int num)
+void print_binary(unsigned long int num)
 {
-    if (num > 0)
-    {
-        if (num >> 1)
-            display_binary(num >> 1);
-        _putchar((num & 1) + '0');
-    }
-    else
-    {
-        _putchar('0');
-    }
+	if (num >> 0)
+	{
+		if (n >> 1)
+			print_binary(num >> 1);
+		_putchar((num & 1) + '0');
+	}
+	else
+	{
+		_putchar('0');
+	}
 }
 
