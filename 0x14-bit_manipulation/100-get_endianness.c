@@ -5,7 +5,7 @@
  * Return: 0 if big Endian, 1 if little Endian
  */
 
-int get_Endianness(void)
+int get_endianness(void)
 {
 	unsigned int c;
 	char *s;
