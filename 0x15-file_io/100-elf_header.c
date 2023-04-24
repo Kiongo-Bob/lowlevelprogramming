@@ -7,21 +7,20 @@
 #include <elf.h>
 
 /**
- * print_addr - Print the address
- * @ptr: Magic.
- * Return: Nil return.
+ * print_addr - prints address
+ * @ptr: magic.
+ * Return: no return.
  */
 void print_addr(char *ptr)
 {
-	/* Local variable declaration */
 	int i;
 	int begin;
-	char system;
+	char sys;
 
-	printf("Entry point address:               0x");
+	printf("  Entry point address:               0x");
 
-	system = ptr[4] + '0';
-	if (system == '1')
+	sys = ptr[4] + '0';
+	if (sys == '1')
 	{
 		begin = 26;
 		printf("80");
@@ -36,7 +35,7 @@ void print_addr(char *ptr)
 			printf("00");
 	}
 
-	if (system == '2')
+	if (sys == '2')
 	{
 		begin = 26;
 		for (i = begin; i > 23; i--)
@@ -53,13 +52,12 @@ void print_addr(char *ptr)
 }
 
 /**
- * print_type - Prints type
- * @ptr: Magic.
- * Return: Nil return.
+ * print_type - prints type
+ * @ptr: magic.
+ * Return: no return.
  */
 void print_type(char *ptr)
 {
-	/* Local variable declaration */
 	char type = ptr[16];
 
 	if (ptr[5] == 1)
@@ -83,13 +81,12 @@ void print_type(char *ptr)
 }
 
 /**
- * print_osabi - Prints osabi
- * @ptr: Magic.
- * Return: Nil return.
+ * print_osabi - prints osabi
+ * @ptr: magic.
+ * Return: no return.
  */
 void print_osabi(char *ptr)
 {
-	/* Local variable declaration */
 	char osabi = ptr[7];
 
 	printf("  OS/ABI:                            ");
@@ -107,13 +104,12 @@ void print_osabi(char *ptr)
 
 
 /**
- * print_version - Prints the version
- * @ptr: Magic.
- * Return: Nil return.
+ * print_version - prints version
+ * @ptr: magic.
+ * Return: no return.
  */
 void print_version(char *ptr)
 {
-	/* Local variable declaration */
 	int version = ptr[6];
 
 	printf("  Version:                           %d", version);
@@ -124,13 +120,12 @@ void print_version(char *ptr)
 	printf("\n");
 }
 /**
- * print_data - Prints data
- * @ptr: Magic.
- * Return: Nil return.
+ * print_data - prints data
+ * @ptr: magic.
+ * Return: no return.
  */
 void print_data(char *ptr)
 {
-	/* Local variable declaration */
 	char data = ptr[5];
 
 	printf("  Data:                              2's complement");
@@ -141,13 +136,12 @@ void print_data(char *ptr)
 		printf(", big endian\n");
 }
 /**
- * print_magic - Prints magic info.
- * @ptr: Magic.
- * Return: Nil return.
+ * print_magic - prints magic info.
+ * @ptr: magic.
+ * Return: no return.
  */
 void print_magic(char *ptr)
 {
-	/* Local variable declaration */
 	int bytes;
 
 	printf("  Magic:  ");
@@ -160,25 +154,24 @@ void print_magic(char *ptr)
 }
 
 /**
- * check_sys - Check the system's version.
- * @ptr: Magic.
- * Return: Nil return.
+ * check_sys - check the version system.
+ * @ptr: magic.
+ * Return: no return.
  */
 void check_sys(char *ptr)
 {
-	/* Local variable declaration */
-	char system = ptr[4] + '0';
+	char sys = ptr[4] + '0';
 
-	if (system == '0')
+	if (sys == '0')
 		exit(98);
 
 	printf("ELF Header:\n");
 	print_magic(ptr);
 
-	if (system == '1')
+	if (sys == '1')
 		printf("  Class:                             ELF32\n");
 
-	if (system == '2')
+	if (sys == '2')
 		printf("  Class:                             ELF64\n");
 
 	print_data(ptr);
@@ -189,13 +182,12 @@ void check_sys(char *ptr)
 }
 
 /**
- * check_elf - Checks if it is an elf file.
- * @ptr: Magic.
- * Return: 1 if it is an elf fil else returns 0.
+ * check_elf - check if it is an elf file.
+ * @ptr: magic.
+ * Return: 1 if it is an elf file. 0 if not.
  */
 int check_elf(char *ptr)
 {
-	/* Local variable declaration */
 	int addr = (int)ptr[0];
 	char E = ptr[1];
 	char L = ptr[2];
@@ -208,14 +200,13 @@ int check_elf(char *ptr)
 }
 
 /**
- * main - Checks the code for Holberton School students.
- * @argc: No. of args.
- * @argv: Args vector.
- * Return: 0 each time.
+ * main - check the code for Holberton School students.
+ * @argc: number of arguments.
+ * @argv: arguments vector.
+ * Return: Always 0.
  */
 int main(int argc, char *argv[])
 {
-	/* Local variable declaration */
 	int fd, ret_read;
 	char ptr[27];
 
@@ -253,4 +244,3 @@ int main(int argc, char *argv[])
 
 	return (0);
 }
-
