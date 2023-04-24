@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * error_file - Checks if files can be opened.
  * @file_from: File_from.
