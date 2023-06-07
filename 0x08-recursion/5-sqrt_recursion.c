@@ -1,48 +1,34 @@
 #include "main.h"
+
 /**
-* _sqrt_recursion - calculates the square root of a number using recursion
-* @n: integer parameter
-* Return: square root of n, or -1 if no exact square root exists
+* _sqrt_recursion - a function
+* @n: int n
+* Return: integer
 */
 int _sqrt_recursion(int n)
 {
-	if (n < 0)
-	{
-	return (-1);
-	}
-	else
-	{
-	return (_sqrt_helper(n, 0, n));
-	}
+	return (_sqrt(n, 1));
 }
 
 /**
-* _sqrt_helper - helper function for square root calculation
+* _sqrt - _sqrt_recursion
 * @n: integer parameter
-* @low: lower bound of the search range
-* @high: upper bound of the search range
-* Return: square root of n, or -1 if no exact square root exists
+* @i: integer parameter
+* Return: sqrt
 */
-int _sqrt_helper(int n, int low, int high)
+int _sqrt(int n, int i)
 {
-	if (low > high)
+	if (n < 0)
 	{
-        return (-1);
+		return (-1);
 	}
-
-int mid = low + (high - low) / 2;
-
-	if (mid * mid == n)
+	if ((i * i) > n)
 	{
-	return (mid);
+		return (-1);
 	}
-	else if (mid * mid < n)
+	if (i * i == n)
 	{
-        return (_sqrt_helper(n, mid + 1, high));
+		return (i);
 	}
-	else
-	{
-        return (_sqrt_helper(n, low, mid - 1));
-	}
+	return (_sqrt(n, i + 1));
 }
-
