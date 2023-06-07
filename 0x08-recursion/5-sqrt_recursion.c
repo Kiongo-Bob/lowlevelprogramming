@@ -8,11 +8,11 @@ int _sqrt_recursion(int n)
 {
 	if (n < 0)
 	{
-	return -1; // Invalid input: square root is undefined for negative numbers
+	return (-1);
 	}
 	else
 	{
-	return _sqrt_helper(n, 0, n);
+	return (_sqrt_helper(n, 0, n));
 	}
 }
 
@@ -27,7 +27,7 @@ int _sqrt_helper(int n, int low, int high)
 {
 	if (low > high)
 	{
-        return -1;
+        return (-1);
 	}
 
 int mid = low + (high - low) / 2;
